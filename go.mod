@@ -1,4 +1,4 @@
-module mongo
+module koko.mongo
 
 go 1.15
 

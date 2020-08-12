@@ -1,9 +1,17 @@
 package main
 
 import (
-	"github.com/MaciejMichalak/golang/mongo/db"
+	"fmt"
+
+	"koko.mongo/mongo"
 )
 
 func main() {
-	db.Init(27017, "koko", nil)
+	mongo.Init(27017, "koko")
+	err := mongo.Connect()
+	if err != nil {
+		fmt.Println("Failed to connect")
+	} else {
+		fmt.Println("Connected!")
+	}
 }
